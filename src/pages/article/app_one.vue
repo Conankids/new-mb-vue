@@ -33,7 +33,6 @@
       return {
         listcache: false,
         extData: {
-          type: 4,
           id: process.env.NODE_ENV == 'production' ? window.blogid : 30831
         }
       }

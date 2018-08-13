@@ -97,31 +97,33 @@
     },
     components: {},
     mounted: function () {
-
-      this._cacheKey_ = window.location.href
-      let cache_data = sessionStorage.get(this._cacheKey_)
-      if (!this.cache || !cache_data) {
-        sessionStorage.delete(this._cacheKey_)
-        this.getItemData()
-      } else {
-        this._cacheData_ = cache_data
-
-        this.new_limit = cache_data.limit || this.new_limit
-        this.item_data = cache_data.data || this.item_data
-        this.loading = cache_data.loading || this.loading
-        this.nodata = cache_data.nodata || this.nodata
-        this.nomore = cache_data.nomore || this.nomore
-      }
-
-      let throttleDeFn = throttle(() => {
-        this.getItemData()
-      },320);
-      jQuery(window).off('scroll.home').on('scroll.home', () => {
-        throttleDeFn()
-      })
+      this.initData()
     },
     methods: {
+      initData(){
+        this._cacheKey_ = window.location.href + (this.extData.blog_type || '')
+        let cache_data = sessionStorage.get(this._cacheKey_)
+        if (!this.cache || !cache_data) {
+          sessionStorage.delete(this._cacheKey_)
+          this.getItemData()
+        } else {
+          this._cacheData_ = cache_data
+          this.new_limit = cache_data.limit || this.new_limit
+          this.item_data = cache_data.data || this.item_data
+          this.loading = cache_data.loading || this.loading
+          this.nodata = cache_data.nodata || this.nodata
+          this.nomore = cache_data.nomore || this.nomore
+        }
+
+        let throttleDeFn = throttle(() => {
+          this.getItemData()
+        },320);
+        jQuery(window).off('scroll.home').on('scroll.home', () => {
+          throttleDeFn()
+        })
+      },
       getItemData () {
+
         //没有更多数据
         if (this.nomore) return
 
@@ -186,17 +188,27 @@
           }
         }, 'json')
       },
-      refresh () {
-        this.jqueryLoader.abort()
-        sessionStorage.delete(this._cacheKey_)
+      refresh (isClearCache) {
+        this.jqueryLoader && this.jqueryLoader.abort()
+        !isClearCache && sessionStorage.delete(this._cacheKey_)
         this.timer && clearTimeout(this.timer)
         this.new_limit = ''
         this.item_data = []
         this.nomore = false
         this.loading = false
         this.nodata = false
-        this._cacheData_ = ''
-        this.item_data = []
+        !isClearCache && (this._cacheData_ = '')
+      }
+    },
+    watch:{
+      extData:{
+        deep: true,
+        handler(newVal, oldVal){
+            this.refresh(true)
+            this.$nextTick(() => {
+              this.initData()
+            })
+        }
       }
     }
   }

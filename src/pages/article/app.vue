@@ -4,6 +4,7 @@
     <page-header curr="article"/>
     <div class="content-wrap">
       <div class="mian-stream">
+        <TabType :typeList="typeList" @changeType="changeType"/>
         <load-data-limit
           url="/api/article/GetBlogLists"
           :cache="listcache"
@@ -26,26 +27,39 @@
   import PageHeader from '@/components/header.vue'
   import loadDataLimit from '@/components/loadDataLimit.vue'
   import LargCard from './../../components/card/large.vue'
-  import { mapState } from 'vuex'
+  import TabType from './tab-type.vue'
+  import {mapState} from 'vuex'
 
   export default {
     data: function () {
       return {
         listcache: process.env.NODE_ENV == 'production' ? true : false,
         extData: {
-          type: 4,
-        }
+          blog_type: '',
+        },
+        typeList: [
+          {name: '全部', type: ''},
+          {name: '体验', type: '4'},
+          {name: '轻体验', type: '8'}
+        ]
+      }
+    },
+    methods: {
+      changeType(type) {
+        this.extData.blog_type = type
+        console.log(this.extData)
       }
     },
     components: {
       PageHeader,
       LargCard,
-      loadDataLimit
+      loadDataLimit,
+      TabType
     },
   }
 </script>
 
 <style lang="scss">
-  $IMAGES_PATH : '../../style/images/';
+  $IMAGES_PATH: '../../style/images/';
   @import './../../style/scss/app.scss';
 </style>

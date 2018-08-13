@@ -4,10 +4,11 @@
       <a :href="`/mb/article/article/${item.blogid}.html`">
         <div class="stream-title ft16 mgb5">{{ item.title }}</div>
         <div class="stream-box">
-          <template v-if="tag">
+          <template v-if="tag || item.type==8">
             <span v-if="item.type==1" class="event-tag qingdan">清单</span>
             <span v-else-if="item.type==2" class="event-tag xinping">新品</span>
             <span v-else-if="item.type==4" class="event-tag tiyan">体验</span>
+            <span v-else-if="item.type==8" class="event-tag qingtiyan">轻体验</span>
           </template>
           <div class="stream-img">
             <img
