@@ -2,19 +2,19 @@
   <li class="large clear" v-waves.block="true">
     <div class="global-padding">
       <a :href="`/mb/article/article/${item.blogid}.html`">
-        <div class="stream-title ft16 mgb5">{{ item.title }}</div>
+        <div class="stream-title ft14 mgb12">{{ item.title }}</div>
         <div class="stream-box">
-          <template v-if="tag || item.type==8">
+          <template v-if="tag || item.type==9">
             <span v-if="item.type==1" class="event-tag qingdan">清单</span>
             <span v-else-if="item.type==2" class="event-tag xinping">新品</span>
             <span v-else-if="item.type==4" class="event-tag tiyan">体验</span>
-            <span v-else-if="item.type==8" class="event-tag qingtiyan">轻体验</span>
+            <span v-else-if="item.type==9" class="event-tag qingtiyan">轻体验</span>
           </template>
           <div class="stream-img">
             <img
               :data-background-size="`${220/75}rem auto`"
-              v-lazy="`http://s1.jiguo.com/${item.cover}/640?imageView2/1/w/640/h/320/q/100`"
-              :src="`http://s1.jiguo.com/${item.cover}/640?imageView2/1/w/60/h/30/q/30`"
+              v-lazy="`//s2.jiguo.com/${item.cover}/640?imageView2/1/w/640/h/320/q/100`"
+              :src="`//s2.jiguo.com/${item.cover}/640?imageView2/1/w/60/h/30/q/30`"
             />
             <div class="mask-cover"></div>
           </div>
@@ -51,7 +51,7 @@
       </a>
       <template v-if="productName">
         <div class="article-show-all-header" v-if="item.product">
-          <a class="article-show-all-header-href ft16 gray" :href="`/mb/article/articlelist/id/${item.pid}.html`">
+          <a class="article-show-all-header-href ft12 gray" :href="`/mb/article/articlelist/id/${item.pid}.html`">
             <span class="line1">{{ item.product }}</span>
             <span v-if="item.num>1" class="icon icon-more">{{item.num}}篇</span>
           </a>

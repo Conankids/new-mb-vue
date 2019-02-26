@@ -41,22 +41,22 @@
         },
         item_link:[
           {
-            url:'http://www.jiguo.com/article/article/50124.html',
+            url:'https://www.jiguo.com/article/article/50124.html',
             cover:require('../style/images/凯驰.jpg'),
             title:'与德国凯驰达成独家战略合作',
           },
           {
-            url:'http://www.jiguo.com/article/article/50101.html',
+            url:'https://www.jiguo.com/article/article/50101.html',
             cover:require('../style/images/有赞.jpg'),
             title:'有赞推荐优质合作伙伴',
           },
           {
-            url:'http://www.jiguo.com/article/article/50104.html',
+            url:'https://www.jiguo.com/article/article/50104.html',
             cover:require('../style/images/天猫.jpg'),
             title:'助推品牌电商流量暴涨5倍',
           },
           {
-            url:'http://www.jiguo.com/article/article/50105.html',
+            url:'https://www.jiguo.com/article/article/50105.html',
             cover:require('../style/images/比菲力T恤.jpg'),
             title:'60天将一件小众T恤卖到400万',
           }

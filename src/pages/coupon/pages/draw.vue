@@ -393,7 +393,7 @@
             <div class="coupons__event-list">
               <a v-for="item in props.data" class="coupons__event-item" :href="`/mb/event/index/${item.eventid}.html`">
                 <div class="coupons__event-cover">
-                  <img :src="`http://s1.jiguo.com/${item.cover}/230x230`"/>
+                  <img :src="`//s2.jiguo.com/${item.cover}/230x230`"/>
                 </div>
                 <div class="coupons__event-right">
                   <div class="coupons__event-item-title">{{item.title}}</div>

@@ -26,6 +26,8 @@
       max-height: px2rem(80);
       overflow: hidden;
       word-break: break-all;
+      color: #333333;
+      font-weight: bold;
     }
     .stream-img {
       overflow: hidden;
@@ -57,21 +59,21 @@
             <img src="../../../style/images/elite.png">
           </div>
           <img
-            v-lazy="`http://s1.jiguo.com/${item.cover}/230x230`"
-            :src="`http://s1.jiguo.com/${item.cover}/230x230?imageView2/1/w/50/h/30/q/30`"
+            v-lazy="`//s2.jiguo.com/${item.cover}/230x230`"
+            :src="`//s2.jiguo.com/${item.cover}/230x230?imageView2/1/w/50/h/30/q/30`"
           />
           <div class="video" v-if="item.video==1">
             <i class="icon icon-video"></i>
           </div>
         </div>
         <div class="stream-right">
-          <div class="stream-title ft16">{{ item.title }}</div>
+          <div class="stream-title ft14">{{ item.title }}</div>
           <div class="stream-discount red">
             <!--红色价格 特色描述-->
             <template v-if="item.format">
               <span class="red ft12">
-                <em class="ft18">{{ item.format.middle_left }}</em>
-                <em class="ft14 mgl10">{{ item.format.middle_right }}</em>
+                <em class="ft16">{{ item.format.middle_left }}</em>
+                <em class="ft12 mgl10">{{ item.format.middle_right }}</em>
               </span>
             </template>
             <template v-else-if="item.feature">
@@ -79,7 +81,7 @@
             </template>
             <template v-else>
               <template v-if="item.productinfo && item.productinfo.price">
-                <span class="ft18">￥{{ item.productinfo.price }}</span>
+                <span class="ft16">￥{{ item.productinfo.price }}</span>
               </template>
 
               <template v-if="item.productinfo && item.productinfo.discount && item.productinfo.discount>0">
@@ -88,7 +90,7 @@
             </template>
 
           </div>
-          <div class="stream-mall gray ft14">
+          <div class="stream-mall gray ft12">
             <span v-if="item.format">{{ item.format.bottom_left }}</span>
             <span v-else-if="item.productinfo && item.productinfo.mall" class="mall">{{ item.productinfo.mall }}</span>
             <span v-else-if="item.author" class="author">{{ item.author }}</span>

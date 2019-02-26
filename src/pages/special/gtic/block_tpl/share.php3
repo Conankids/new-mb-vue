@@ -142,7 +142,7 @@ $wxjs = $jssdk->GetSignPackage();
 		wx.onMenuShareTimeline({
 			title: title, // 分享标题
 			link: urls, // 分享链接
-			imgUrl: 'http://cdn.jiguo.com/static@2.0/v1.0.0/img/8f1f320.jpg', // 分享图标
+			imgUrl: '//cdn.jiguo.com/static@2.0/v1.0.0/img/8f1f320.jpg', // 分享图标
 			success: function () {
 				// 用户确认分享后执行的回调函数
 			},
@@ -156,7 +156,7 @@ $wxjs = $jssdk->GetSignPackage();
 			title: title, // 分享标题
 			desc: "", // 分享描述
 			link: urls, // 分享链接
-			imgUrl: 'http://cdn.jiguo.com/static@2.0/v1.0.0/img/8f1f320.jpg', // 分享图标
+			imgUrl: '//cdn.jiguo.com/static@2.0/v1.0.0/img/8f1f320.jpg', // 分享图标
 			type: '', // 分享类型,music、video或link，不填默认为link
 			dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
 			success: function () {

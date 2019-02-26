@@ -18,8 +18,8 @@
           <div class="stream-img">
             <img
               :data-background-size="`${220/75}rem auto`"
-              v-lazy="`http://s1.jiguo.com/${item.cover}/640?imageView2/1/w/640/h/320/q/100`"
-              :src="`http://s1.jiguo.com/${item.cover}/640?imageView2/1/w/60/h/30/q/30`"
+              v-lazy="`//s2.jiguo.com/${item.cover}/640?imageView2/1/w/640/h/320/q/100`"
+              :src="`//s2.jiguo.com/${item.cover}/640?imageView2/1/w/60/h/30/q/30`"
             />
             <div class="mask-cover"></div>
           </div>
@@ -79,7 +79,7 @@
                   <img
                     v-if="item.event_list_bottom_left.length>=5"
                     class="home-i1"
-                    src="http://cdn.jiguo.com/static/WeiXin/images/diandiandian.png"
+                    src="//cdn.jiguo.com/static/WeiXin/images/diandiandian.png"
                   />
                 </div>
                 <div class="home-f2" v-else>{{item.event_list_bottom_left}}</div>

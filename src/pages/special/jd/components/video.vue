@@ -13,7 +13,7 @@
     </div>
     <a class="video-next" v-animate
        href="http://m.jiguo.com/mb/article/article/62706.html?from=singlemessage&isappinstalled=0">
-      <img class="img" src="http://s1.jiguo.com/efbf5ebc-3dec-45a7-ad61-fb59b5a37d6b?imageView2/1/w/640/h/365/q/100"/>
+      <img class="img" src="//s2.jiguo.com/efbf5ebc-3dec-45a7-ad61-fb59b5a37d6b?imageView2/1/w/640/h/365/q/100"/>
       <div class="text">这个夏天不仅有世界杯！超能玩家跨界集结...</div>
     </a>
   </div>

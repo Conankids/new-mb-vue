@@ -25,6 +25,8 @@
       line-height: px2rem(40);
       max-height: px2rem(80);
       overflow: hidden;
+      color: #333333;
+      font-weight: bold;
     }
     .stream-img {
       overflow: hidden;
@@ -53,12 +55,12 @@
       <div class="stream-box">
         <div class="stream-img">
           <img
-            v-lazy="`http://s1.jiguo.com/${_item.fileid}/230x230`"
-            :src="`http://s1.jiguo.com/${_item.fileid}/230x230?imageView2/1/w/50/h/30/q/30`"
+            v-lazy="`//s2.jiguo.com/${_item.fileid}/230x230`"
+            :src="`//s2.jiguo.com/${_item.fileid}/230x230?imageView2/1/w/50/h/30/q/30`"
           />
         </div>
         <div class="stream-right">
-          <div class="stream-title ft16">{{_item.name}}</div>
+          <div class="stream-title ft14">{{_item.name}}</div>
           <div class="stream-discount red mt10">
             <span class="red ft16">{{ _item.follownum }}人</span>
             <span class="gray ft12">申请</span>

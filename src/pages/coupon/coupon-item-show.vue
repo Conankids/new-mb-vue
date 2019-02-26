@@ -309,7 +309,7 @@
           <div class="immediately-quanhao mgt20 mgl20 mgr20 tc">
             <div class="mb20">
               <div class="logo-box" v-if="item.cover">
-                <img :src="`http://s1.jiguo.com/${ item.cover }/230x230`">
+                <img :src="`//s2.jiguo.com/${ item.cover }/230x230`">
               </div>
               <div class="">
                 <span class="cb3 ft14">券号：</span>

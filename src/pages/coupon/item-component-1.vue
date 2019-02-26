@@ -41,7 +41,7 @@
     <div class="coupons__card-right">
       <div class="coupons__card-desc">{{item.name}}</div>
       <div class="coupons__no">券号：{{ item.jid }}</div>
-      <div class="mall-logo-wrap" v-if="item.cover"><img :src="`http://s1.jiguo.com/${ item.cover }/230x230`"/></div>
+      <div class="mall-logo-wrap" v-if="item.cover"><img :src="`//s2.jiguo.com/${ item.cover }/230x230`"/></div>
       <div class="coupons__card-time">有效期：{{item.start_time}}-{{item.end_time}}</div>
     </div>
     <div class="coupons__card-status">

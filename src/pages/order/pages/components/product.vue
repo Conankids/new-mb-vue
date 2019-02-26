@@ -46,7 +46,7 @@
 <template>
   <div class="order__product mgt10">
     <div class="order__product-img">
-      <img src="http://s1.jiguo.com/0ea145ef-23bd-4885-8265-f28db212a68f/230x230" />
+      <img src="//s2.jiguo.com/0ea145ef-23bd-4885-8265-f28db212a68f/230x230" />
     </div>
     <div class="order__product-desc">
       <h2 class="product-title">小佩Petkit宠物智能喂食器</h2>

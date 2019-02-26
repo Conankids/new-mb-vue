@@ -34,7 +34,7 @@
 <template>
   <div class="user__center-header mgt52 clear">
     <div class="user__face">
-      <img src="http://s1.jiguo.com/edb501ae-e8a0-4186-8462-58c314ef98bd/230x230">
+      <img src="//s2.jiguo.com/edb501ae-e8a0-4186-8462-58c314ef98bd/230x230">
     </div>
     <div class="user__desc">
       <div class="k1">

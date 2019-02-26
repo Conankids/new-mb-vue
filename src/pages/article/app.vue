@@ -40,14 +40,13 @@
         typeList: [
           {name: '全部', type: ''},
           {name: '体验', type: '4'},
-          {name: '轻体验', type: '8'}
+          {name: '轻体验', type: '9'}
         ]
       }
     },
     methods: {
       changeType(type) {
         this.extData.blog_type = type
-        console.log(this.extData)
       }
     },
     components: {
