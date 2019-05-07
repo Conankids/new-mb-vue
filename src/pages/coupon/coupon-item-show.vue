@@ -237,6 +237,7 @@
         font-size: px2rem(12px * 2);
         line-height: px2rem(20px * 2);
         color: #595959;
+        margin-top: px2rem(18px * 2);
         padding-bottom: px2rem(10px * 2);
         text-align: left;
         position: relative;
@@ -311,13 +312,13 @@
               <div class="logo-box" v-if="item.cover">
                 <img :src="`//s2.jiguo.com/${ item.cover }/230x230`">
               </div>
-              <div class="">
+              <div class="mgt10">
                 <span class="cb3 ft14">券号：</span>
                 <span class="c00 ft14" id="clipboard-content">{{ item.jid }}</span>
               </div>
-              <div class="immediately-coupon-tiaoxin mgt10">
-                <img src="./icon/coupon-tiaoxin2.svg">
-              </div>
+              <!--<div class="immediately-coupon-tiaoxin mgt10">-->
+                <!--<img src="./icon/coupon-tiaoxin2.svg">-->
+              <!--</div>-->
               <div class="immediately-time ft12 mgt10">
                 <span style="color:#595959;">{{ item.start_time }} - {{ item.end_time }}</span>
               </div>
