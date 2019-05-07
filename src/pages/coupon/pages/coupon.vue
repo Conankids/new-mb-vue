@@ -129,8 +129,9 @@
 </template>
 
 <script>
-  import { mapActions } from 'vuex'
+  import {mapActions} from 'vuex'
   import $ from 'jquery'
+  import tools from '../../../tools/index'
   import PageHeaderBack from '@/components/header-back.vue'
   import LoadAsyncData from '@/pages/search/bases/load-async-data.vue'
   import ItemComponent1 from '../item-component-1.vue'
@@ -138,18 +139,25 @@
   import CouponItemShow from '../coupon-item-show.vue'
 
   export default {
-    data () {
+    data() {
       return {
         tabbar: [],
         currentItem: {},
         showItem: {}
       }
     },
-    mounted () {
+    mounted() {
+      const initType = tools.url.getUrlParams('type')
       $.get('/api/coupon/GetCouponBar', replayData => {
         this.hidePageLoading()
+        let currentType = 0
         this.tabbar = replayData.result
-        this.currentItem = this.tabbar[0]
+        this.tabbar.map((item, index) => {
+          if (item.ctype == initType) {
+            currentType = index
+          }
+        })
+        this.currentItem = this.tabbar[currentType]
       }, 'json').always(() => {
 
       }).fail(() => {
@@ -164,13 +172,13 @@
       CouponItemShow
     },
     methods: {
-      back () {
+      back() {
         window.location = '/mb/user/index.html'
       },
-      setShowItem (item) {
+      setShowItem(item) {
         this.showItem = item
       },
-      switchTabbar (item) {
+      switchTabbar(item) {
         this.currentItem = item
       },
       ...mapActions(['hidePageLoading'])

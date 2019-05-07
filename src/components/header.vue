@@ -108,9 +108,9 @@
         var socket
         // 连接服务端
         if (process.env.NODE_ENV == 'production') {
-          socket = io('http://io.jiguo.com:2126')
+          socket = io('wss://io.jiguo.com')
         } else {
-          socket = io('http://msg.jiguo.com:2126')
+          socket = io('wss://msg.jiguo.com')
         }
         // 连接后登录
         socket.on('connect', function () {

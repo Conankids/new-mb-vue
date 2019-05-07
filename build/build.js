@@ -41,7 +41,7 @@ const run = function () {
 // let clear = false
 let clear = process.argv.indexOf('command-dnot-clear')>-1
 
-if(!clear){
+if(clear){
 	run()
 }else{
 	rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
