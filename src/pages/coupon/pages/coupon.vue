@@ -176,7 +176,9 @@
         window.location = '/mb/user/index.html'
       },
       setShowItem(item) {
-        this.showItem = item
+        if(item.coupon_package_user_type!=1){
+          this.showItem = item
+        }
       },
       switchTabbar(item) {
         this.currentItem = item

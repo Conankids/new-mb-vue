@@ -43,6 +43,9 @@
     },
     methods: {
       toLink () {
+        if(this.item.has_use!=1){
+          return
+        }
         if (this.link) {
           this.$router.push({
             path: '/mb/user/draw.html?id=' + this.item.id
