@@ -326,8 +326,8 @@
             <div class="immediately-desc">{{ item.item }}</div>
             <div class="query">
               <div class="btn-group table">
-                <div class="table-cell pdr10" @click="copy">
-                  <a class="btn gray border" href="javascript:;" ref="clipboard-copy" data-clipboard-target="clipboard-content">复制券号</a>
+                <div class="table-cell pdr10" >
+                  <a class="btn gray border" href="javascript:;" ref="clipboard-copy" :data-clipboard-text="item.jid">复制券号</a>
                 </div>
                 <div class="table-cell pdl10">
                   <a class="btn white border" target="_blank" :href="item.link">前往使用</a>
@@ -343,6 +343,7 @@
 <script>
   import Modal from '@/components/modal/modal.vue'
   import $ from 'jquery'
+  import Clipboard from 'clipboard'
 
   export default {
     props: {
@@ -371,18 +372,22 @@
     components: {
       Modal
     },
+    mounted(){
+      this.copy()
+    },
     methods:{
       close(){
         this.$emit('update:item', {})
       },
       copy(){
-        var clip = new ZeroClipboard( this.$refs['clipboard-copy'] );
+        var clip = new Clipboard( this.$refs['clipboard-copy'] );
         var _this = this
-        clip.on('copy',function () {
-          _this.Confirm().setText('复制完成').show()
+        clip.on('success',function () {
+          _this.Toast().setText('复制完成').show()
         });
-        clip.on('error',function () {
-          $('.table-cell.pdr10').hide().next().removeClass('pdl10');
+        clip.on('error',function (e) {
+          console.log(e)
+//          $('.table-cell.pdr10').hide().next().removeClass('pdl10');
         });
       }
     }

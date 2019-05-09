@@ -10,6 +10,7 @@
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run"
   },
   "dependencies": {
+    "clipboard": "^2.0.4",
     "jquery": "^3.2.1",
     "js-cookie": "^2.1.4",
     "md5": "^2.2.1",
